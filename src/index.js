@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import TabsComponent from './Tabs';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <App />
+    <h1>
+      Your Joke <br /> Our Wrapper
+    </h1>
+    <TabsComponent></TabsComponent>
   </React.StrictMode>
 );
 
