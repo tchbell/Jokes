@@ -18,9 +18,6 @@ class JokeForm extends React.Component {
   }
 
   handleSubmit(event) {
-    console.log(
-      `Joke: ${this.state.joke},  Punchline: ${this.state.punchline}`
-    );
     this.props.jokeSubmit({
       joke: this.state.joke,
       punchline: this.state.punchline,

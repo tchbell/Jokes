@@ -11,6 +11,7 @@ class TabsComponent extends React.Component {
     this.state = { key: 'home', joke: '', punchline: '', userInfo: '' };
 
     this.handleSelect = this.handleSelect.bind(this);
+    this.userInfoSubmitted = this.userInfoSubmitted.bind(this);
   }
 
   handleSelect(key) {
@@ -18,43 +19,38 @@ class TabsComponent extends React.Component {
   }
 
   jokeSubmitted = (data) => {
-    console.log(data);
     this.setState({ key: 'info', joke: data.joke, punchline: data.punchline });
-    setTimeout(() => {
-      console.log(this.state);
-    }, 1000);
-    console.log(this.state);
   };
 
   userInfoSubmitted = (data) => {
-    console.log(data);
-    this.setState({ key: 'shop' });
-        // fetch('https://mywebsite.example/endpoint/', {
-    //   method: 'POST',
-    //   headers: {
-    //     // Accept: 'application/json',
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     profile: {
-    //       firstName: this.state.name.split('')[0],
-    //       lastName: this.state.name.split('')[1],
-    //       gender: '',
-    //       email: this.state.email,
-    //       address: this.state.addressOne,
-    //       city: this.state.city,
-    //       state: this.state.state,
-    //       zip: this.state.zip,
-    //       phones: {
-    //         number: '',
-    //       },
-    //     },
-    //     data: {
-    //       joke: '',
-    //       answer: '',
-    //     },
-    //   }),
-    // });
+    this.setState({ key: 'shop', userInfo: data.profile });
+
+    fetch('http://localhost:8080/api/joke_resource', {
+      method: 'POST',
+      headers: {
+        // Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        profile: {
+          firstName: this.satte.userInfoSubmitted.firstName,
+          lastName: this.userInfoSubmitted.lastName,
+          gender: '',
+          email: this.userInfoSubmitted.email,
+          address: this.userInfoSubmitted.address,
+          city: this.userInfoSubmitted.city,
+          state: this.userInfoSubmitted.state,
+          zip: this.userInfoSubmitted.zip,
+          phones: {
+            number: '',
+          },
+        },
+        data: {
+          joke: this.state.joke,
+          answer: this.state.punchline,
+        },
+      }),
+    });
   };
 
   render() {
