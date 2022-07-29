@@ -30,15 +30,15 @@ class TabsComponent extends React.Component {
         profile: {
           firstName: this.state.userInfo.firstName,
           lastName: this.state.userInfo.lastName,
-          gender: '',
+          // gender: '',
           email: this.state.userInfo.email,
           address: this.state.userInfo.address,
           city: this.state.userInfo.city,
           state: this.state.userInfo.state,
-          zip: this.state.userInfo.zip,
-          phones: {
-            number: '',
-          },
+          // zip: this.state.userInfo.zip,
+          // phones: {
+          //   number: '',
+          // },
         },
         data: {
           joke: this.state.joke,
@@ -58,15 +58,15 @@ class TabsComponent extends React.Component {
           profile: {
             firstName: this.state.userInfo.firstName,
             lastName: this.state.userInfo.lastName,
-            gender: '',
+            // gender: '',
             email: this.state.userInfo.email,
             address: this.state.userInfo.address,
             city: this.state.userInfo.city,
             state: this.state.userInfo.state,
             zip: this.state.userInfo.zip,
-            phones: {
-              number: '',
-            },
+            // phones: {
+            //   number: '',
+            // },
           },
           data: {
             joke: this.state.joke,
