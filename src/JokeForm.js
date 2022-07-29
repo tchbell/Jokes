@@ -2,46 +2,62 @@ import React from 'react';
 class JokeForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { email: '', joke: '' };
+    this.state = { punchline: '', joke: '' };
 
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
+    this.handleChangePunchLine = this.handleChangePunchLine.bind(this);
     this.handleChangeJoke = this.handleChangeJoke.bind(this);
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleChangeEmail(event) {
-    this.setState({ email: event.target.value });
+  handleChangePunchLine(event) {
+    this.setState({ punchline: event.target.value });
   }
   handleChangeJoke(event) {
     this.setState({ joke: event.target.value });
   }
 
   handleSubmit(event) {
-    console.log(`Joke: ${this.state.joke},  Email: ${this.state.email}`);
-    this.props.jokeSubmit(this.state.joke);
+    console.log(
+      `Joke: ${this.state.joke},  Punchline: ${this.state.punchline}`
+    );
+    this.props.jokeSubmit({
+      joke: this.state.joke,
+      punchline: this.state.punchline,
+    });
     event.preventDefault();
   }
 
   render() {
     return (
-      <form className="form" onSubmit={this.handleSubmit}>
-        <label>
-          Submit Your Joke:
-          <textarea value={this.state.joke} onChange={this.handleChangeJoke} />
-        </label>
+      <div>
+        <p>
+          It's time to put your funny bone to the test! Submit your joke and
+          punchline below in 50 characters or less.
+        </p>
+        <form className="form" onSubmit={this.handleSubmit}>
+          <label>
+            The Setup
+            <textarea
+              value={this.state.joke}
+              onChange={this.handleChangeJoke}
+            />
+          </label>
 
-        <label>
-          Email:
-          <input
-            type="email"
-            value={this.state.email}
-            onChange={this.handleChangeEmail}
-          />
-        </label>
+          <label>
+            The Punchline
+            <input
+              type="text"
+              value={this.state.punchline}
+              onChange={this.handleChangePunchLine}
+            />
+          </label>
 
-        <button type="submit">Submit</button>
-      </form>
+          <button type="submit">Submit</button>
+        </form>
+        <h2>Need Some Punny Inspiration?</h2>
+        <button className="reverse">Read A Random Joke</button>
+      </div>
     );
   }
 }

@@ -1,3 +1,78 @@
+@font-face {
+  font-family: Gothic-BlackItalic;
+  src: url('./assets/fonts/Gotham-BlackItalic.otf');
+}
+
+@font-face {
+  font-family: Gothic-Bold;
+  src: url('./assets/fonts/Gotham-Bold.otf');
+}
+
+@font-face {
+  font-family: Gothic-BoldItalic;
+  src: url('./assets/fonts/Gotham-BoldItalic.otf');
+}
+
+@font-face {
+  font-family: Gothic-Book;
+  src: url('./assets/fonts/Gotham-Book.otf');
+}
+
+@font-face {
+  font-family: Gothic-BookItalic;
+  src: url('./assets/fonts/Gotham-BookItalic.otf');
+}
+
+@font-face {
+  font-family: Gothic-Light;
+  src: url('./assets/fonts/Gotham-Light.otf');
+}
+
+@font-face {
+  font-family: Gothic-Medium;
+  src: url('./assets/fonts/Gotham-Medium.otf');
+}
+
+@font-face {
+  font-family: Gothic-MediumItalic;
+  src: url('./assets/fonts/Gotham-MediumItalic.otf');
+}
+
+@font-face {
+  font-family: Gothic-Thin;
+  src: url('./assets/fonts/Gotham-Thin.otf');
+}
+
+@font-face {
+  font-family: Gothic-ThinItalic;
+  src: url('./assets/fonts/Gotham-ThinItalic.otf');
+}
+
+@font-face {
+  font-family: Gothic-Ultra;
+  src: url('./assets/fonts/Gotham-Ultra.otf');
+}
+
+@font-face {
+  font-family: Gothic-UltraItalic;
+  src: url('./assets/fonts/Gotham-UltraItalic.otf');
+}
+
+@font-face {
+  font-family: Gothic-XLight;
+  src: url('./assets/fonts/Gotham-XLight.otf');
+}
+
+@font-face {
+  font-family: Gothic-XLightItalic;
+  src: url('./assets/fonts/Gotham-XLightItalic.otf');
+}
+
+@font-face {
+  font-family: SS_Nickson_Six;
+  src: url('./assets/fonts/SS_Nickson_Six.otf');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -17,21 +92,86 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 90vh;
+  /* min-height: 90vh; */
 }
 
-.form {
+.form, .userForm {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.form label {
+.form, .userForm label {
   display: flex;
   flex-direction: column;
+}
+
+.userForm{
+  
 }
 
 ul.nav-tabs {
   display: none;
 }
+
+.wrapper {
+  background-image: url('./assets/images/background.png');
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.joke-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  min-height: 90vh;
+  max-width: 980px;
+}
+
+.joke-container h1 {
+  font-size: 95px;
+  color: white;
+  font-family: 'SS_Nickson_Six';
+  text-shadow: 5px 5px #5000d5;
+  -webkit-text-stroke: 1px #5000d5;
+}
+
+.joke-container h2 {
+  font-size: 50px;
+  color: #5000d5;
+  font-family: 'SS_Nickson_Six';
+  font-size: 45px;
+}
+
+.joke-container p {
+  color: #5000d5;
+  font-family: Gothic-Medium;
+}
+
+.joke-container button {
+  background-color: white;
+  border: 2px solid #5000d5;
+  color: #5000d5;
+  padding: 0.5rem 3rem;
+  border-radius: 5px;
+  font-family: 'SS_Nickson_Six';
+  font-size: 25px;
+  margin: 2rem 0;
+}
+
+.joke-container button.reverse {
+  background-color: #5000d5;
+  border: 2px solid white;
+  color: white;
+}
+
+.joke-container a {
+  color: #5000d5;
+  font-family: 'SS_Nickson_Six';
+  font-size: 14px;
+}
+

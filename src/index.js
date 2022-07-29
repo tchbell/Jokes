@@ -10,9 +10,6 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
   <React.StrictMode>
-    <h1>
-      Your Joke <br /> Our Wrapper
-    </h1>
     <TabsComponent></TabsComponent>
   </React.StrictMode>
 );
