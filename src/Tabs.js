@@ -25,6 +25,7 @@ class TabsComponent extends React.Component {
   userInfoSubmitted = (data) => {
     this.setState({ key: 'shop', userInfo: data.profile });
 
+
     fetch('http://localhost:8080/api/joke_resource', {
       method: 'POST',
       headers: {
@@ -33,14 +34,14 @@ class TabsComponent extends React.Component {
       },
       body: JSON.stringify({
         profile: {
-          firstName: this.satte.userInfoSubmitted.firstName,
-          lastName: this.userInfoSubmitted.lastName,
+          firstName: this.state.userInfo.firstName,
+          lastName: this.state.userInfo.lastName,
           gender: '',
-          email: this.userInfoSubmitted.email,
-          address: this.userInfoSubmitted.address,
-          city: this.userInfoSubmitted.city,
-          state: this.userInfoSubmitted.state,
-          zip: this.userInfoSubmitted.zip,
+          email: this.state.userInfo.email,
+          address: this.state.userInfo.address,
+          city: this.state.userInfo.city,
+          state: this.state.userInfo.state,
+          zip: this.state.userInfo.zip,
           phones: {
             number: '',
           },
