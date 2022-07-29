@@ -3,42 +3,36 @@ class UserInfo extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      addressOne: '',
-      addressTwo: '',
+      address: '',
       city: '',
-      email: '',
-      name: '',
+      lastName: '',
+      firstName: '',
       state: '',
       terms: false,
       zip: '',
     };
 
-    this.handleChangeAddressOne = this.handleChangeAddressOne.bind(this);
-    this.handleChangeAddressTwo = this.handleChangeAddressTwo.bind(this);
+    this.handleChangeAddress = this.handleChangeAddress.bind(this);
     this.handleChangeCity = this.handleChangeCity.bind(this);
-    this.handleChangeEmail = this.handleChangeEmail.bind(this);
-    this.handleChangeName = this.handleChangeName.bind(this);
+    this.handleChangelastName = this.handleChangelastName.bind(this);
+    this.handleChangefirstName = this.handleChangefirstName.bind(this);
     this.handleChangeState = this.handleChangeState.bind(this);
-    // this.handleChangeTerms = this.handleChangeTerms(this);
+    this.handleChangeTerms = this.handleChangeTerms.bind(this);
     this.handleChangeZip = this.handleChangeZip.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.submitUserInfo = this.submitUserInfo.bind(this);
   }
 
-  handleChangeAddressOne(event) {
-    this.setState({ addressOne: event.target.value });
-  }
-
-  handleChangeAddressTwo(event) {
-    this.setState({ addressTwo: event.target.value });
+  handleChangeAddress(event) {
+    this.setState({ address: event.target.value });
   }
   handleChangeCity(event) {
     this.setState({ city: event.target.value });
   }
-  handleChangeEmail(event) {
-    this.setState({ email: event.target.value });
+  handleChangelastName(event) {
+    this.setState({ lastName: event.target.value });
   }
-  handleChangeName(event) {
+  handleChangefirstName(event) {
     this.setState({ name: event.target.value });
   }
   handleChangeState(event) {
@@ -48,15 +42,16 @@ class UserInfo extends React.Component {
     this.props.infoSubmitted('name: ' + this.state.name);
     event.preventDefault();
   }
-  // handleChangeTerms(event) {
-  //   const target = event.target;
-  //   const value = target.type === 'checkbox' ? target.checked : target.value;
-  //   const name = target.name;
+  handleChangeTerms(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
 
-  //   this.setState({
-  //     [name]: value,
-  //   });
-  // }
+    this.setState({
+      [name]: value,
+    });
+    console.log(this.state);
+  }
   handleChangeZip(event) {
     this.setState({ zip: event.target.value });
   }
@@ -67,17 +62,12 @@ class UserInfo extends React.Component {
 
     let body = {
       profile: {
-        firstName: this.state.name.split(' ')[0],
-        lastName: this.state.name.split(' ')[1],
-        gender: '',
-        email: this.state.email,
-        address: this.state.addressOne,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        address: this.state.address,
         city: this.state.city,
         state: this.state.state,
         zip: this.state.zip,
-        phones: {
-          number: '',
-        },
       },
       data: {
         joke: '',
@@ -96,18 +86,18 @@ class UserInfo extends React.Component {
             name="name"
             type="text"
             placeholder="Name"
-            value={this.state.name}
+            value={this.state.firstName}
             onChange={this.handleChangeName}
           ></input>
         </div>
         <div className="col-6">
           {' '}
           <input
-            name="email"
-            type="email"
-            placeholder="Email"
-            value={this.state.email}
-            onChange={this.handleChangeEmail}
+            name="lastName"
+            type="lastName"
+            placeholder="lastName"
+            value={this.state.lastName}
+            onChange={this.handleChangelastName}
           ></input>
         </div>
         <div className="col-12">
@@ -116,18 +106,8 @@ class UserInfo extends React.Component {
             name="addressOne"
             type="text"
             placeholder="Address Line 1"
-            value={this.state.addressOne}
-            onChange={this.handleChangeAddressOne}
-          ></input>
-        </div>
-        <div className="col-12">
-          {' '}
-          <input
-            name="addressTwo"
-            type="text"
-            placeholder="Address Line 2"
-            value={this.state.addressTwo}
-            onChange={this.handleChangeAddressTwo}
+            value={this.state.address}
+            onChange={this.handleChangeAddress}
           ></input>
         </div>
         <div className="col-6 col-md-4">
@@ -160,15 +140,24 @@ class UserInfo extends React.Component {
             onChange={this.handleChangeZip}
           ></input>
         </div>
-
-        {/* <label>
-            <input name="terms" type="checkbox" onChange={this.handleTerms} />
+        <div className="col-12">
+          <label>
             Agree to terms and conditions
-          </label> */}
-
-        <button className="reverse" type="submit">
-          Submit
-        </button>
+            <input
+              name="terms"
+              type="checkbox"
+              defaultValue={false}
+              checked={this.state.terms}
+              onChange={this.handleChangeTerms}
+            />
+          </label>
+        </div>
+        <div className="col-12">
+          {' '}
+          <button className="reverse" type="submit">
+            Submit
+          </button>
+        </div>
       </form>
     );
   }

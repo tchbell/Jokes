@@ -8,7 +8,13 @@ class Shop extends React.Component {
         <div>
           <img />
         </div>
-        <button>Shop Laffy Taffy</button>
+        <a
+          href="https://www.laffytaffy.com/where-to-buy"
+          rel="noreferrer"
+          target="_blank"
+        >
+          <button>Shop Laffy Taffy</button>
+        </a>
 
         <h3>Follow the King of Dad Jokes (Us) on Social Media</h3>
         <div className="row social-media">

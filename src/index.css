@@ -122,6 +122,18 @@ code {
   width: 100%;
 }
 
+.userForm label {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 5px;
+}
+
 .userForm input.input-full {
   flex: 0 0 95%;
   margin: 5px;
