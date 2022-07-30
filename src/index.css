@@ -162,6 +162,8 @@ ul.nav-tabs {
 
 .wrapper {
   background-image: url('./assets/images/background.png');
+  background-size: cover;
+  background-position: center center;
   display: flex;
   justify-content: center;
   align-items: flex-start;
