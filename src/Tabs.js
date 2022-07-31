@@ -24,34 +24,11 @@ class TabsComponent extends React.Component {
 
   userInfoSubmitted = (data) => {
     this.setState({ key: 'shop', userInfo: data.profile });
-
+    console.log(this.state.userInfo);
     setTimeout(() => {
-      console.log(this.state.userInfo);
-      fetch('http://localhost:8080/api/joke_resource', {
-        method: 'POST',
-        headers: {
-          // Accept: 'application/json',
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          profile: {
-            firstName: this.state.userInfo.firstName,
-            lastName: this.state.userInfo.lastName,
-            // gender: '',
-            email: this.state.userInfo.email,
-            address: this.state.userInfo.address,
-            city: this.state.userInfo.city,
-            state: this.state.userInfo.state,
-            zip: this.state.userInfo.zip,
-            // phones: {
-            //   number: '',
-            // },
-          },
-          data: {
-            joke: this.state.joke,
-            answer: this.state.punchline,
-          },
-        }),
+      console.log({
+        profile: this.state.userInfo,
+        data: { first: this.state.joke, second: this.state.punchline },
       });
     }, 1000);
   };
