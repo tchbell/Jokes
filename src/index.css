@@ -100,6 +100,67 @@ code {
   flex-direction: column;
 }
 
+.jokeForm {
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url('./assets/images/Wrapper.png');
+  background-size: cover;
+  margin-bottom: 10rem;
+}
+
+.jokeForm .setup,
+.jokeForm .punchline {
+  position: absolute;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'SS_Nickson_Six';
+  width: 100%;
+
+}
+
+.jokeForm .setup {
+  top: 15px;
+  left: 35px;
+}
+
+.jokeForm .punchline {
+  bottom: 20px;
+  left: 30px;
+}
+
+.jokeForm .setup input,
+.jokeForm .punchline input {
+  border: none;
+  background-color: transparent;
+  margin-left: 3rem;
+  color: white;
+  font-size: 2rem;
+  width: 55%;
+}
+
+@media screen and (min-width: 639px) {
+
+  .jokeForm .setup input,
+  .jokeForm .punchline input {
+    width: 70%;
+  }
+}
+
+.jokeForm .punchline input {
+  margin-left: 1rem;
+}
+
+.jokeForm button {
+  position: absolute;
+  bottom: -9rem;
+}
+
 .form,
 .userForm {
   justify-content: center;
@@ -153,7 +214,40 @@ input[type="checkbox"] {
   color: #ededed;
   text-transform: uppercase;
   font-family: 'SS_Nickson_Six';
+}
 
+.stars {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.stars p.starOne,
+.stars p.starTwo {
+  font-family: 'SS_Nickson_Six';
+  background-size: cover;
+  height: 154px;
+  width: 175px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+p.starOne {
+  background-image: url('./assets/images/purple_star.png');
+  transform: rotate(-19deg);
+  color: yellow !important;
+  z-index: 1;
+  margin-bottom: 3rem;
+  margin-right: -3rem;
+}
+
+p.starTwo {
+  background-image: url('./assets/images/yellow_star.png');
+  transform: rotate(19deg);
+  font-size: 1.25rem;
 }
 
 ul.nav-tabs {
@@ -173,12 +267,22 @@ ul.nav-tabs {
   bottom: 0;
   right: 0;
   overflow: auto;
+  overflow-x: hidden;
+}
+
+.projectContainer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  /* height: 100%; */
 }
 
 .joke-container {
   display: flex;
   justify-content: flex-start;
-  margin: 200px;
+  margin-top: 200px;
   align-items: center;
   flex-direction: column;
   text-align: center;
@@ -186,17 +290,32 @@ ul.nav-tabs {
 }
 
 .joke-container h1 {
-  font-size: 95px;
+  font-size: 65px;
   color: white;
   font-family: 'SS_Nickson_Six';
   text-shadow: 5px 5px #5000d5;
-  -webkit-text-stroke: 1px #5000d5;
+  -webkit-text-stroke: 2px #5000d5;
+
+
+}
+
+@media screen and (min-width: 742px) {
+  .joke-container h1 {
+    font-size: 95px;
+  }
 }
 
 .joke-container h2 {
   color: #5000d5;
   font-family: 'SS_Nickson_Six';
-  font-size: 45px;
+  font-size: 35px;
+
+}
+
+@media screen and (min-width: 640px) {
+  .joke-container h2 {
+    font-size: 45px;
+  }
 }
 
 .joke-container h3 {
@@ -215,7 +334,7 @@ ul.nav-tabs {
   border: 2px solid #5000d5;
   color: #5000d5;
   padding: 0.5rem 3rem;
-  border-radius: 5px;
+  border-radius: 10px;
   font-family: 'SS_Nickson_Six';
   font-size: 25px;
   margin: 2rem 0;
@@ -233,4 +352,160 @@ ul.nav-tabs {
   color: #5000d5;
   font-family: 'SS_Nickson_Six';
   font-size: 14px;
+}
+
+.jokestersContainer {
+  position: relative;
+  margin-top: 4rem;
+
+}
+
+.jokestersContainer img {
+  position: absolute;
+  top: -30px;
+  right: 25px;
+  width: 50px;
+  height: 50px;
+}
+
+@media screen and (min-width: 379px) {
+  .jokestersContainer img {
+    top: -30px;
+    right: -30px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 739px) {
+  .jokestersContainer img {
+    top: -70px;
+    right: -70px;
+    width: 100px;
+    height: 100px;
+  }
+}
+
+.comedianContainer {
+  position: relative;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.comedianContainer img {
+  bottom: 0;
+  position: absolute;
+  transform: rotate(-15deg);
+  max-width: 50px;
+  top: 20px;
+  left: 10px;
+}
+
+@media screen and (min-width: 640px) {
+  .comedianContainer img {
+    left: -20px;
+    top: 30px;
+  }
+}
+
+
+.logo {
+  position: absolute;
+  height: 120px;
+  width: 120px;
+  top: 1rem;
+  left: 1rem;
+}
+
+.package {
+  position: absolute;
+  width: 150px;
+}
+
+@media screen and (min-width: 739px) {
+  .package {
+    width: 250px;
+  }
+}
+
+.package.banana {
+  top: -16px;
+  right: -85px;
+  left: 0;
+  margin: 0 auto;
+  transform: rotate(10deg);
+}
+
+@media screen and (min-width: 400px) {
+  .package.banana {
+    top: -16px;
+    right: 0;
+    left: 0;
+    margin: 0 auto;
+    transform: rotate(-10deg);
+  }
+}
+
+.package.strawberry {
+  bottom: -10rem;
+  left: -70px;
+  transform: rotate(21deg);
+}
+
+@media screen and (min-width: 980px) {
+  .package.package.strawberry {
+    bottom: 0;
+  }
+}
+
+.package.apple {
+  bottom: -5rem;
+  right: -40px;
+  transform: rotate(-18deg);
+}
+
+.package.cherry {
+  top: 14%;
+  right: -40px;
+  transform: rotate(-7deg);
+}
+
+@media screen and (min-width: 530px) {
+  .package.package.cherry {
+    top: 25%;
+    right: -40px;
+    transform: rotate(-7deg);
+  }
+}
+
+.package.grape {
+  top: 17%;
+  right: -40px;
+  transform: rotate(21deg);
+}
+
+@media screen and (min-width: 530px) {
+  .package.grape {
+    top: 28%;
+    right: -40px;
+    transform: rotate(21deg);
+  }
+}
+
+.social-media .col-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.social-media .col-3 a {
+  background-color: white;
+  border: 2px solid #5000d5;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
 }

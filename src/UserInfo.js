@@ -33,7 +33,7 @@ class UserInfo extends React.Component {
     this.setState({ lastName: event.target.value });
   }
   handleChangefirstName(event) {
-    this.setState({ name: event.target.value });
+    this.setState({ firstName: event.target.value });
   }
   handleChangeState(event) {
     this.setState({ state: event.target.value });
@@ -50,7 +50,6 @@ class UserInfo extends React.Component {
     this.setState({
       [name]: value,
     });
-    console.log(this.state);
   }
   handleChangeZip(event) {
     this.setState({ zip: event.target.value });
@@ -79,86 +78,106 @@ class UserInfo extends React.Component {
 
   render() {
     return (
-      <form className="userForm row" onSubmit={this.submitUserInfo}>
-        <div className="col-6">
-          {' '}
-          <input
-            name="name"
-            type="text"
-            placeholder="Name"
-            value={this.state.firstName}
-            onChange={this.handleChangeName}
-          ></input>
+      <div>
+        <div className="stars">
+          <p className="starOne">
+            Are you a <br /> mountain?
+          </p>
+          <p className="starTwo">
+            Cuz You're <br /> Hill-arous?
+          </p>
         </div>
-        <div className="col-6">
-          {' '}
-          <input
-            name="lastName"
-            type="lastName"
-            placeholder="lastName"
-            value={this.state.lastName}
-            onChange={this.handleChangelastName}
-          ></input>
-        </div>
-        <div className="col-12">
-          {' '}
-          <input
-            name="addressOne"
-            type="text"
-            placeholder="Address Line 1"
-            value={this.state.address}
-            onChange={this.handleChangeAddress}
-          ></input>
-        </div>
-        <div className="col-6 col-md-4">
-          {' '}
-          <input
-            name="city"
-            type="text"
-            placeholder="City"
-            value={this.state.city}
-            onChange={this.handleChangeCity}
-          ></input>
-        </div>
-        <div className="col-6 col-md-4">
-          {' '}
-          <input
-            name="state"
-            type="text"
-            placeholder="State"
-            value={this.state.state}
-            onChange={this.handleChangeState}
-          ></input>
-        </div>
-        <div className="col-12 col-md-4">
-          {' '}
-          <input
-            name="zip"
-            type="text"
-            placeholder="Zipcode"
-            value={this.state.zip}
-            onChange={this.handleChangeZip}
-          ></input>
-        </div>
-        <div className="col-12">
-          <label>
-            Agree to terms and conditions
+        <p>
+          <i>Now, </i> enter in you information below!
+        </p>
+        <form className="userForm row" onSubmit={this.submitUserInfo}>
+          <div className="col-6">
+            {' '}
             <input
-              name="terms"
-              type="checkbox"
-              defaultValue={false}
-              checked={this.state.terms}
-              onChange={this.handleChangeTerms}
-            />
-          </label>
-        </div>
-        <div className="col-12">
-          {' '}
-          <button className="reverse" type="submit">
-            Submit
-          </button>
-        </div>
-      </form>
+              name="firstName"
+              type="text"
+              placeholder="First Name"
+              value={this.state.firstName}
+              onChange={this.handleChangefirstName}
+              required
+            ></input>
+          </div>
+          <div className="col-6">
+            {' '}
+            <input
+              name="lastName"
+              type="text"
+              placeholder="Last Name"
+              value={this.state.lastName}
+              onChange={this.handleChangelastName}
+              required
+            ></input>
+          </div>
+          <div className="col-12">
+            {' '}
+            <input
+              name="addressOne"
+              type="text"
+              placeholder="Address Line 1"
+              value={this.state.address}
+              onChange={this.handleChangeAddress}
+              required
+            ></input>
+          </div>
+          <div className="col-6 col-md-4">
+            {' '}
+            <input
+              name="city"
+              type="text"
+              placeholder="City"
+              value={this.state.city}
+              onChange={this.handleChangeCity}
+              required
+            ></input>
+          </div>
+          <div className="col-6 col-md-4">
+            {' '}
+            <input
+              name="state"
+              type="text"
+              placeholder="State"
+              value={this.state.state}
+              onChange={this.handleChangeState}
+              required
+            ></input>
+          </div>
+          <div className="col-12 col-md-4">
+            {' '}
+            <input
+              name="zip"
+              type="text"
+              placeholder="Zipcode"
+              value={this.state.zip}
+              onChange={this.handleChangeZip}
+              required
+            ></input>
+          </div>
+          <div className="col-12">
+            <label>
+              Agree to terms and conditions
+              <input
+                name="terms"
+                type="checkbox"
+                defaultValue={false}
+                checked={this.state.terms}
+                onChange={this.handleChangeTerms}
+                required
+              />
+            </label>
+          </div>
+          <div className="col-12">
+            {' '}
+            <button className="reverse" type="submit">
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

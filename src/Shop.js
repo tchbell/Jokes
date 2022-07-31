@@ -3,8 +3,18 @@ class Shop extends React.Component {
   render() {
     return (
       <div>
-        <h2>Are you a comedian or a comedi-aint</h2>
-        <p>We'll be the judge of that!</p>
+        <div className="comedianContainer">
+          <img
+            className="img-fluid"
+            src={require('./assets/images/laugh.png')}
+            alt=""
+          ></img>
+          <h2>
+            Are you a comedian <br />
+            or a comedi-aint
+          </h2>
+          <p>We'll be the judge of that!</p>
+        </div>
         <div>
           <img />
         </div>
@@ -24,7 +34,11 @@ class Shop extends React.Component {
               target="_blank"
               rel="noreferrer"
             >
-              Twitter
+              <img
+                className="img-fluid"
+                src={require('./assets/images/twitter.png')}
+                alt=""
+              ></img>
             </a>
           </div>
           <div className="col-3">
@@ -33,7 +47,11 @@ class Shop extends React.Component {
               target="_blank"
               rel="noreferrer"
             >
-              facebook
+              <img
+                className="img-fluid"
+                src={require('./assets/images/facebook.png')}
+                alt=""
+              ></img>
             </a>
           </div>
           <div className="col-3">
@@ -42,7 +60,11 @@ class Shop extends React.Component {
               target="_blank"
               rel="noreferrer"
             >
-              instagram
+              <img
+                className="img-fluid"
+                src={require('./assets/images/instagram.png')}
+                alt=""
+              ></img>
             </a>
           </div>
           <div className="col-3">
@@ -51,7 +73,11 @@ class Shop extends React.Component {
               target="_blank"
               rel="noreferrer"
             >
-              Tiktok
+              <img
+                className="img-fluid"
+                src={require('./assets/images/tiktok.png')}
+                alt=""
+              ></img>
             </a>
           </div>
         </div>

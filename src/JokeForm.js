@@ -2,14 +2,26 @@ import React from 'react';
 class JokeForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { punchline: '', joke: '' };
+    this.state = {
+      punchline: '',
+      joke: '',
+      prompt: 'What does an owl need after having a bath? A t-owl!',
+      promptVisible: false,
+    };
 
     this.handleChangePunchLine = this.handleChangePunchLine.bind(this);
     this.handleChangeJoke = this.handleChangeJoke.bind(this);
 
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    this.togglePrompt = this.togglePrompt.bind(this);
   }
 
+  togglePrompt() {
+    this.setState((prevState) => ({
+      promptVisible: !prevState.promptVisible,
+    }));
+  }
   handleChangePunchLine(event) {
     this.setState({ punchline: event.target.value });
   }
@@ -32,28 +44,36 @@ class JokeForm extends React.Component {
           It's time to put your funny bone to the test! Submit your joke and
           punchline below in 50 characters or less.
         </p>
-        <form className="form" onSubmit={this.handleSubmit}>
-          <label>
+
+        <form className="form jokeForm" onSubmit={this.handleSubmit}>
+          <label className="setup">
             The Setup
-            <textarea
+            <input
+              maxLength={50}
               value={this.state.joke}
               onChange={this.handleChangeJoke}
+              required
             />
           </label>
 
-          <label>
+          <label className="punchline">
             The Punchline
             <input
               type="text"
               value={this.state.punchline}
               onChange={this.handleChangePunchLine}
+              required
             />
           </label>
 
           <button type="submit">Submit</button>
         </form>
         <h2>Need Some Punny Inspiration?</h2>
-        <button className="reverse">Read A Random Joke</button>
+        <button onClick={this.togglePrompt} className="reverse">
+          Read A Random Joke
+        </button>
+
+        {this.state.promptVisible ? <p>{this.state.prompt}</p> : null}
       </div>
     );
   }
