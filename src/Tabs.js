@@ -26,6 +26,7 @@ class TabsComponent extends React.Component {
     this.setState({ key: 'shop', userInfo: data.profile });
 
     setTimeout(() => {
+      console.log(this.state.userInfo);
       fetch('http://localhost:8080/api/joke_resource', {
         method: 'POST',
         headers: {

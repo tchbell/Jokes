@@ -5,7 +5,7 @@ class JokeForm extends React.Component {
     this.state = {
       punchline: '',
       joke: '',
-      prompt: 'What does an owl need after having a bath? A t-owl!',
+      prompt: '',
       promptVisible: false,
     };
 
@@ -15,6 +15,12 @@ class JokeForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.togglePrompt = this.togglePrompt.bind(this);
+  }
+
+  componentDidMount() {
+    fetch('http://localhost:8080/api/joke_resource')
+      .then((response) => response.json())
+      .then((data) => this.setState({ prompt: `${data.joke} ${data.answer}` }));
   }
 
   togglePrompt() {

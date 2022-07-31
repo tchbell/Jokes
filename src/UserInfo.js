@@ -5,6 +5,7 @@ class UserInfo extends React.Component {
     this.state = {
       address: '',
       city: '',
+      email: '',
       lastName: '',
       firstName: '',
       state: '',
@@ -14,6 +15,7 @@ class UserInfo extends React.Component {
 
     this.handleChangeAddress = this.handleChangeAddress.bind(this);
     this.handleChangeCity = this.handleChangeCity.bind(this);
+    this.handleEmail = this.handleEmail.bind(this);
     this.handleChangelastName = this.handleChangelastName.bind(this);
     this.handleChangefirstName = this.handleChangefirstName.bind(this);
     this.handleChangeState = this.handleChangeState.bind(this);
@@ -28,6 +30,9 @@ class UserInfo extends React.Component {
   }
   handleChangeCity(event) {
     this.setState({ city: event.target.value });
+  }
+  handleEmail(event) {
+    this.setState({ email: event.target.value });
   }
   handleChangelastName(event) {
     this.setState({ lastName: event.target.value });
@@ -63,6 +68,7 @@ class UserInfo extends React.Component {
       profile: {
         firstName: this.state.firstName,
         lastName: this.state.lastName,
+        email: this.state.email,
         address: this.state.address,
         city: this.state.city,
         state: this.state.state,
@@ -110,6 +116,17 @@ class UserInfo extends React.Component {
               placeholder="Last Name"
               value={this.state.lastName}
               onChange={this.handleChangelastName}
+              required
+            ></input>
+          </div>
+          <div className="col-12">
+            {' '}
+            <input
+              name="email"
+              type="email"
+              placeholder="Email"
+              value={this.state.email}
+              onChange={this.handleEmail}
               required
             ></input>
           </div>
