@@ -75,8 +75,8 @@ class UserInfo extends React.Component {
         zip: this.state.zip,
       },
       data: {
-        joke: '',
-        answer: '',
+        first: '',
+        second: '',
       },
     };
     this.props.infoSubmitted(body);
@@ -87,10 +87,10 @@ class UserInfo extends React.Component {
       <div>
         <div className="stars">
           <p className="starOne">
-            Are you a <br /> mountain?
+            First <br /> Star
           </p>
           <p className="starTwo">
-            Cuz You're <br /> Hill-arous?
+            Second <br /> Star
           </p>
         </div>
         <p>

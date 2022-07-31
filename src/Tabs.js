@@ -60,56 +60,9 @@ class TabsComponent extends React.Component {
     return (
       <div className="wrapper">
         <div className="projectContainer">
-          <div className="logo">
-            <img
-              className="img-fluid"
-              src={require('./assets/images/Laffy_transparent.png')}
-              alt=""
-            />
-          </div>
-          <div className="package banana">
-            {' '}
-            <img
-              className="img-fluid"
-              src={require('./assets/images/banana.png')}
-              alt=""
-            ></img>
-          </div>
-          <div className="package apple">
-            {' '}
-            <img
-              className="img-fluid"
-              src={require('./assets/images/sour_apple.png')}
-              alt=""
-            ></img>
-          </div>
-          <div className="package strawberry">
-            {' '}
-            <img
-              className="img-fluid"
-              src={require('./assets/images/strawberry.png')}
-              alt=""
-            ></img>
-          </div>
-          <div className="package cherry">
-            {' '}
-            <img
-              className="img-fluid"
-              src={require('./assets/images/cherry.png')}
-              alt=""
-            ></img>
-          </div>
-          <div className="package grape">
-            {' '}
-            <img
-              className="img-fluid"
-              src={require('./assets/images/grape.png')}
-              alt=""
-            ></img>
-          </div>
           <div className="joke-container">
             <h1>
-              Your Joke <br /> Our Wrapper
+              Big Header <br /> Goes Here
             </h1>
             <Tabs
               defaultActiveKey="home"
@@ -121,25 +74,22 @@ class TabsComponent extends React.Component {
                 <div className="container">
                   {' '}
                   <div className="jokestersContainer">
-                    <h2>Calling All Jokesters!</h2>
-                    <img
-                      className="img-fluid"
-                      src={require('./assets/images/laugh.png')}
-                      alt=""
-                    ></img>
+                    <h2>Lorem ipsum dolor</h2>
                   </div>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
                   <p>
-                    Do you have what it takes to write a great Laffy Taffy joke?
-                  </p>
-                  <p>
-                    101( lol) winners will have their jokes featured on our
-                    wrappers and 1 lucky jokester will recieve a $5,000 prize!
-                    Submit your joke for a chance to win!
+                    Praesent leo turpis, gravida in sem sed, cursus lobortis
+                    sapien. Aliquam dictum, sem quis imperdiet luctus, justo ex
+                    fermentum diam, ut bibendum leo enim at diam. Mauris in
+                    tempus eros, sed rhoncus est. Maecenas condimentum, lacus
+                    non sollicitudin porttitor, velit lectus sollicitudin lorem,
+                    sit amet sollicitudin dolor sem malesuada erat. In facilisis
+                    ipsum vehicula augue elementum, ut finibus eros dictum.
                   </p>
                   <button onClick={() => this.handleSelect('joke')}>
                     Lets Go!
                   </button>
-                  <a href="#">Terms and Conditions</a>
+                  <a href="#">Maecenas condimentum</a>
                 </div>
               </Tab>
               <Tab eventKey="joke" title="Joke">

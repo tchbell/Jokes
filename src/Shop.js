@@ -4,36 +4,20 @@ class Shop extends React.Component {
     return (
       <div>
         <div className="comedianContainer">
-          <img
-            className="img-fluid"
-            src={require('./assets/images/laugh.png')}
-            alt=""
-          ></img>
           <h2>
-            Are you a comedian <br />
-            or a comedi-aint
+            Do you like <br />
+            or not like
           </h2>
-          <p>We'll be the judge of that!</p>
+          <p>Ok sounds good</p>
         </div>
         <div>
           <img />
         </div>
-        <a
-          href="https://www.laffytaffy.com/where-to-buy"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <button>Shop Laffy Taffy</button>
-        </a>
 
-        <h3>Follow the King of Dad Jokes (Us) on Social Media</h3>
+        <h3>Follow Social media</h3>
         <div className="row social-media">
           <div className="col-3">
-            <a
-              href="https://twitter.com/LaffyTaffy"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="#" target="_blank" rel="noreferrer">
               <img
                 className="img-fluid"
                 src={require('./assets/images/twitter.png')}
@@ -42,11 +26,7 @@ class Shop extends React.Component {
             </a>
           </div>
           <div className="col-3">
-            <a
-              href="https://www.facebook.com/laffytaffy/"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="#" target="_blank" rel="noreferrer">
               <img
                 className="img-fluid"
                 src={require('./assets/images/facebook.png')}
@@ -55,11 +35,7 @@ class Shop extends React.Component {
             </a>
           </div>
           <div className="col-3">
-            <a
-              href="https://www.instagram.com/laffytaffy"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="#" target="_blank" rel="noreferrer">
               <img
                 className="img-fluid"
                 src={require('./assets/images/instagram.png')}
@@ -68,11 +44,7 @@ class Shop extends React.Component {
             </a>
           </div>
           <div className="col-3">
-            <a
-              href="https://www.tiktok.com/@laffytaffy"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="#" target="_blank" rel="noreferrer">
               <img
                 className="img-fluid"
                 src={require('./assets/images/tiktok.png')}

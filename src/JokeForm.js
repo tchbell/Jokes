@@ -5,7 +5,8 @@ class JokeForm extends React.Component {
     this.state = {
       punchline: '',
       joke: '',
-      prompt: '',
+      prompt:
+        'Praesent vitae vulputate arcu, et tempor nisi. In euismod vel tortor sed efficitur. Integer ut lectus in est iaculis lobortis at at odio',
       promptVisible: false,
     };
 
@@ -15,12 +16,6 @@ class JokeForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
 
     this.togglePrompt = this.togglePrompt.bind(this);
-  }
-
-  componentDidMount() {
-    fetch('http://localhost:8080/api/joke_resource')
-      .then((response) => response.json())
-      .then((data) => this.setState({ prompt: `${data.joke} ${data.answer}` }));
   }
 
   togglePrompt() {
@@ -47,13 +42,13 @@ class JokeForm extends React.Component {
     return (
       <div>
         <p>
-          It's time to put your funny bone to the test! Submit your joke and
-          punchline below in 50 characters or less.
+          Nam molestie mi in nisl euismod efficitur. Phasellus convallis
+          lobortis nunc, at gravida ante egestas at.
         </p>
 
         <form className="form jokeForm" onSubmit={this.handleSubmit}>
           <label className="setup">
-            The Setup
+            An Input
             <input
               maxLength={50}
               value={this.state.joke}
@@ -63,7 +58,7 @@ class JokeForm extends React.Component {
           </label>
 
           <label className="punchline">
-            The Punchline
+            Another Input
             <input
               type="text"
               value={this.state.punchline}
@@ -74,9 +69,9 @@ class JokeForm extends React.Component {
 
           <button type="submit">Submit</button>
         </form>
-        <h2>Need Some Punny Inspiration?</h2>
+        <h2>Click button to togggle</h2>
         <button onClick={this.togglePrompt} className="reverse">
-          Read A Random Joke
+          Click me
         </button>
 
         {this.state.promptVisible ? <p>{this.state.prompt}</p> : null}
