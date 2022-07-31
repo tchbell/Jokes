@@ -16,7 +16,11 @@ class Shop extends React.Component {
           <p>We'll be the judge of that!</p>
         </div>
         <div>
-          <img />
+          <img
+            className="img-fluid"
+            src={require('./assets/images/packages.png')}
+            alt=""
+          />
         </div>
         <a
           href="https://www.laffytaffy.com/where-to-buy"
