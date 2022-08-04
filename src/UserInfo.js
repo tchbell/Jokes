@@ -189,7 +189,7 @@ class UserInfo extends React.Component {
           </div>
           <div className="col-12">
             <label>
-              <a href="#" target="_blank">
+              <a href="/your-jokes/terms-and-conditions" target="_blank">
                 Agree to terms and conditions
               </a>
               <input

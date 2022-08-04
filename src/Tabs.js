@@ -138,7 +138,7 @@ class TabsComponent extends React.Component {
                   <button onClick={() => this.handleSelect('joke')}>
                     Lets Go!
                   </button>
-                  <a href="#">Terms and Conditions</a>
+                  <a href="/your-jokes/terms-and-conditions" target="_blank">Terms and Conditions</a>
                 </div>
               </Tab>
               <Tab eventKey="joke" title="Joke">
