@@ -108,7 +108,7 @@ class TabsComponent extends React.Component {
           </div>
           <div className="joke-container">
             <h1>
-              Your Joke <br /> Our Wrapper
+              Your Jokes <br /> Our Wrapper
             </h1>
             <Tabs
               defaultActiveKey="home"

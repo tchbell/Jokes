@@ -17,15 +17,22 @@ class JokeForm extends React.Component {
     this.togglePrompt = this.togglePrompt.bind(this);
   }
 
-  componentDidMount() {
+  // componentDidMount() {
+  //   fetch('http://localhost:8080/api/joke_resource')
+  //     .then((response) => response.json())
+  //     .then((data) => this.setState({ prompt: `${data.joke} ${data.answer}` }));
+  // }
+
+  getJoke() {
     fetch('http://localhost:8080/api/joke_resource')
       .then((response) => response.json())
       .then((data) => this.setState({ prompt: `${data.joke} ${data.answer}` }));
   }
 
   togglePrompt() {
+    this.getJoke();
     this.setState((prevState) => ({
-      promptVisible: !prevState.promptVisible,
+      promptVisible: true,
     }));
   }
   handleChangePunchLine(event) {

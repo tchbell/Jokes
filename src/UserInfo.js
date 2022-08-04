@@ -10,6 +10,7 @@ class UserInfo extends React.Component {
       firstName: '',
       state: '',
       terms: false,
+      termsEmail: false,
       zip: '',
     };
 
@@ -20,6 +21,7 @@ class UserInfo extends React.Component {
     this.handleChangefirstName = this.handleChangefirstName.bind(this);
     this.handleChangeState = this.handleChangeState.bind(this);
     this.handleChangeTerms = this.handleChangeTerms.bind(this);
+    this.handleChangeTermsEmail = this.handleChangeTermsEmail.bind(this);
     this.handleChangeZip = this.handleChangeZip.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.submitUserInfo = this.submitUserInfo.bind(this);
@@ -56,6 +58,17 @@ class UserInfo extends React.Component {
       [name]: value,
     });
   }
+
+  handleChangeTermsEmail(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
+  }
+
   handleChangeZip(event) {
     this.setState({ zip: event.target.value });
   }
@@ -90,7 +103,7 @@ class UserInfo extends React.Component {
             Are you a <br /> mountain?
           </p>
           <p className="starTwo">
-            Cuz You're <br /> Hill-arous?
+            Cuz You're <br /> Hill-arous!
           </p>
         </div>
         <p>
@@ -176,13 +189,28 @@ class UserInfo extends React.Component {
           </div>
           <div className="col-12">
             <label>
-              Agree to terms and conditions
+              <a href="#" target="_blank">
+                Agree to terms and conditions
+              </a>
               <input
                 name="terms"
                 type="checkbox"
                 defaultValue={false}
                 checked={this.state.terms}
                 onChange={this.handleChangeTerms}
+                required
+              />
+            </label>
+          </div>
+          <div className="col-12">
+            <label>
+              Agree to recieve marketing and promotional emails
+              <input
+                name="termsEmail"
+                type="checkbox"
+                defaultValue={false}
+                checked={this.state.termsEmail}
+                onChange={this.handleChangeTermsEmail}
                 required
               />
             </label>
