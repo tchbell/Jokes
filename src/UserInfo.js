@@ -1,4 +1,5 @@
 import React from 'react';
+import ReCAPTCHA from 'react-google-recaptcha';
 class UserInfo extends React.Component {
   constructor(props) {
     super(props);
@@ -12,6 +13,8 @@ class UserInfo extends React.Component {
       terms: false,
       termsEmail: false,
       zip: '',
+      verified: false,
+      error: '',
     };
 
     this.handleChangeAddress = this.handleChangeAddress.bind(this);
@@ -77,23 +80,40 @@ class UserInfo extends React.Component {
   submitUserInfo(event) {
     event.preventDefault();
 
-    let body = {
-      profile: {
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        email: this.state.email,
-        address: this.state.address,
-        city: this.state.city,
-        state: this.state.state,
-        zip: this.state.zip,
-      },
-      data: {
-        joke: '',
-        answer: '',
-      },
-    };
-    this.props.infoSubmitted(body);
+    if (this.state.verified) {
+      let body = {
+        profile: {
+          firstName: this.state.firstName,
+          lastName: this.state.lastName,
+          email: this.state.email,
+          address: this.state.address,
+          city: this.state.city,
+          state: this.state.state,
+          zip: this.state.zip,
+        },
+        data: {
+          joke: '',
+          answer: '',
+        },
+      };
+      this.props.infoSubmitted(body);
+    } else {
+      console.log('nope');
+      this.setState({
+        error: 'Please verify in the ReCaptcha.',
+      });
+      setTimeout(() => {
+        console.log(this.state.error);
+      }, 1000);
+    }
   }
+
+  onVerification = (result) => {
+    this.setState({
+      verified: true,
+      reCaptchaResponse: result,
+    });
+  };
 
   render() {
     return (
@@ -215,11 +235,21 @@ class UserInfo extends React.Component {
               />
             </label>
           </div>
+          <div className="form_group_recaptcha">
+            <ReCAPTCHA
+              onChange={this.onVerification}
+              sitekey={process.env.REACT_APP_SITE_KEY}
+            />
+          </div>
+
           <div className="col-12">
             {' '}
             <button className="reverse" type="submit">
               Submit
             </button>
+          </div>
+          <div className="col-12">
+            <p>{this.state.error}</p>
           </div>
         </form>
       </div>

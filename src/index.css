@@ -152,6 +152,7 @@ code {
 }
 
 @media screen and (min-width: 639px) {
+
   .jokeForm .setup input,
   .jokeForm .punchline input {
     width: 70%;
@@ -319,6 +320,11 @@ ul.nav-tabs {
   text-shadow: 5px 5px #5000d5;
   -webkit-text-stroke: 2px #5000d5;
   line-height: 1;
+  text-shadow:
+    1px 1px 1px #5000d5,
+    2px 2px 2px #5000d5,
+    3px 3px 0px #5000d5,
+    4px 4px 0px #5000d5;
 }
 
 @media screen and (min-width: 742px) {
@@ -533,4 +539,9 @@ ul.nav-tabs {
   width: 60px;
   height: 60px;
   padding: 10px;
+}
+
+.form_group_recaptcha>div>div {
+  display: flex;
+  place-content: center;
 }
