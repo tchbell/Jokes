@@ -98,13 +98,9 @@ class UserInfo extends React.Component {
       };
       this.props.infoSubmitted(body);
     } else {
-      console.log('nope');
       this.setState({
         error: 'Please verify in the ReCaptcha.',
       });
-      setTimeout(() => {
-        console.log(this.state.error);
-      }, 1000);
     }
   }
 

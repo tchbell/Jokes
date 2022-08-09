@@ -24,7 +24,7 @@ class JokeForm extends React.Component {
   // }
 
   getJoke() {
-    fetch('http://localhost:8080/api/joke_resource')
+    fetch('/api/joke_resource')
       .then((response) => response.json())
       .then((data) => this.setState({ prompt: `${data.joke} ${data.answer}` }));
   }
