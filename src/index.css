@@ -152,7 +152,6 @@ code {
 }
 
 @media screen and (min-width: 639px) {
-
   .jokeForm .setup input,
   .jokeForm .punchline input {
     width: 70%;
@@ -298,7 +297,7 @@ ul.nav-tabs {
   align-items: flex-start;
   position: relative;
   width: 100%;
-  /* height: 100%; */
+  min-height: 100vh;
 }
 
 .joke-container {
@@ -318,10 +317,7 @@ ul.nav-tabs {
   text-shadow: 5px 5px #5000d5;
   -webkit-text-stroke: 2px #5000d5;
   line-height: 1;
-  text-shadow:
-    1px 1px 1px #5000d5,
-    2px 2px 2px #5000d5,
-    3px 3px 0px #5000d5,
+  text-shadow: 1px 1px 1px #5000d5, 2px 2px 2px #5000d5, 3px 3px 0px #5000d5,
     4px 4px 0px #5000d5;
 }
 
@@ -476,14 +472,19 @@ ul.nav-tabs {
 }
 
 .package.strawberry {
-  bottom: 39rem;
-  left: -70px;
+  top: 3rem;
+  left: -40px;
   transform: rotate(21deg);
+  z-index: 1;
 }
-
+@media screen and (min-width: 450px) {
+  .package.package.strawberry {
+    /* top: 60rem; */
+  }
+}
 @media screen and (min-width: 980px) {
   .package.package.strawberry {
-    /* bottom: 32rem; */
+    /* top: 39rem; */
   }
 }
 
@@ -491,6 +492,7 @@ ul.nav-tabs {
   top: 8rem;
   left: -40px;
   transform: rotate(-18deg);
+  z-index: 2;
 }
 
 .package.cherry {
@@ -539,7 +541,7 @@ ul.nav-tabs {
   padding: 10px;
 }
 
-.form_group_recaptcha>div>div {
+.form_group_recaptcha > div > div {
   display: flex;
   place-content: center;
 }
