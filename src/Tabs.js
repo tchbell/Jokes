@@ -59,13 +59,6 @@ class TabsComponent extends React.Component {
     return (
       <div className="wrapper">
         <div className="projectContainer">
-          <div className="logo">
-            <img
-              className="img-fluid"
-              src={require('./assets/images/Laffy_transparent.png')}
-              alt=""
-            />
-          </div>
           <div className="package banana">
             {' '}
             <img
@@ -138,7 +131,9 @@ class TabsComponent extends React.Component {
                   <button onClick={() => this.handleSelect('joke')}>
                     Lets Go!
                   </button>
-                  <a href="/your-jokes/terms-and-conditions" target="_blank">Terms and Conditions</a>
+                  <a href="/your-jokes/terms-and-conditions" target="_blank">
+                    Terms and Conditions
+                  </a>
                 </div>
               </Tab>
               <Tab eventKey="joke" title="Joke">

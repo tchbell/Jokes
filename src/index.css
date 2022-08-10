@@ -198,7 +198,7 @@ code {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   font-family: Gothic-Medium;
 }
 
@@ -207,6 +207,7 @@ code {
   font-family: Gothic-Medium;
   text-decoration: none;
   font-size: 1rem;
+  text-decoration: underline;
 }
 
 .userForm a:hover {
@@ -216,6 +217,7 @@ code {
 input[type='checkbox'] {
   width: auto;
   margin-right: 5px;
+  margin-top: 5px;
 }
 
 .userForm input.input-full {
@@ -285,13 +287,9 @@ ul.nav-tabs {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
   overflow: auto;
   overflow-x: hidden;
+  height: 100%;
 }
 
 .projectContainer {
@@ -314,7 +312,7 @@ ul.nav-tabs {
 }
 
 .joke-container h1 {
-  font-size: 65px;
+  font-size: 80px;
   color: white;
   font-family: 'SS_Nickson_Six';
   text-shadow: 5px 5px #5000d5;
@@ -329,7 +327,7 @@ ul.nav-tabs {
 
 @media screen and (min-width: 742px) {
   .joke-container h1 {
-    font-size: 95px;
+    font-size: 115px;
   }
 }
 
@@ -478,30 +476,30 @@ ul.nav-tabs {
 }
 
 .package.strawberry {
-  bottom: -10rem;
+  bottom: 39rem;
   left: -70px;
   transform: rotate(21deg);
 }
 
 @media screen and (min-width: 980px) {
   .package.package.strawberry {
-    bottom: 0;
+    /* bottom: 32rem; */
   }
 }
 
 .package.apple {
-  bottom: -5rem;
-  right: -40px;
+  top: 8rem;
+  left: -40px;
   transform: rotate(-18deg);
 }
 
 .package.cherry {
-  top: 14%;
+  top: 10%;
   right: -40px;
   transform: rotate(-7deg);
 }
 
-@media screen and (min-width: 530px) {
+@media screen and (min-width: 991px) {
   .package.package.cherry {
     top: 25%;
     right: -40px;
@@ -510,12 +508,12 @@ ul.nav-tabs {
 }
 
 .package.grape {
-  top: 17%;
+  top: 13%;
   right: -40px;
   transform: rotate(21deg);
 }
 
-@media screen and (min-width: 530px) {
+@media screen and (min-width: 991px) {
   .package.grape {
     top: 28%;
     right: -40px;

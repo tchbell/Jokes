@@ -220,7 +220,7 @@ class UserInfo extends React.Component {
           </div>
           <div className="col-12">
             <label>
-              Agree to recieve marketing and promotional emails
+            By clicking submit, you agree to receive marketing and promotional emails from Ferrara Candy Company
               <input
                 name="termsEmail"
                 type="checkbox"
