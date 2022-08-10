@@ -88,7 +88,7 @@ class JokeForm extends React.Component {
 
         {this.state.promptVisible ? <p>{this.state.prompt}</p> : null}
         <div>
-          <a href="/your-jokes/terms-and-conditions" target="_blank">
+          <a href="/yourjokes/terms-and-conditions" target="_blank">
             Terms and Conditions
           </a>
         </div>
