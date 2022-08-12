@@ -22,6 +22,9 @@ class Shop extends React.Component {
             alt=""
           />
         </div>
+        <p className='while'>
+          While you wait, keep the Laffs rolling and shop for Laffy Taffy here.
+        </p>
         <a
           href="https://www.laffytaffy.com/where-to-buy"
           rel="noreferrer"

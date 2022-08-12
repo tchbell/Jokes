@@ -119,7 +119,7 @@ class UserInfo extends React.Component {
             Are you a <br /> mountain?
           </p>
           <p className="starTwo">
-            Cuz You're <br /> Hill-arous!
+            Cuz You're <br /> hill-arious!
           </p>
         </div>
         <p>

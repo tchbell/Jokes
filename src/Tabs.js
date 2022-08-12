@@ -124,7 +124,7 @@ class TabsComponent extends React.Component {
                     Do you have what it takes to write a great Laffy Taffy joke?
                   </p>
                   <p>
-                    101( lol) winners will have their jokes featured on our
+                    101 (lol) winners will have their jokes featured on our
                     wrappers and 1 lucky jokester will recieve a $5,000 prize!
                     Submit your joke for a chance to win!
                   </p>

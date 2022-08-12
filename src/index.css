@@ -152,6 +152,7 @@ code {
 }
 
 @media screen and (min-width: 639px) {
+
   .jokeForm .setup input,
   .jokeForm .punchline input {
     width: 70%;
@@ -477,11 +478,13 @@ ul.nav-tabs {
   transform: rotate(21deg);
   z-index: 1;
 }
+
 @media screen and (min-width: 450px) {
   .package.package.strawberry {
     /* top: 60rem; */
   }
 }
+
 @media screen and (min-width: 980px) {
   .package.package.strawberry {
     /* top: 39rem; */
@@ -541,7 +544,11 @@ ul.nav-tabs {
   padding: 10px;
 }
 
-.form_group_recaptcha > div > div {
+.form_group_recaptcha>div>div {
   display: flex;
   place-content: center;
+}
+
+.while {
+  margin-top: 1rem;
 }
