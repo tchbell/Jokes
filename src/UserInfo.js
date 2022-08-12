@@ -123,7 +123,7 @@ class UserInfo extends React.Component {
           </p>
         </div>
         <p>
-          <i>Now, </i> enter in you information below!
+          <i>Now, </i> enter in your information below!
         </p>
         <form className="userForm row" onSubmit={this.submitUserInfo}>
           <div className="col-6">
