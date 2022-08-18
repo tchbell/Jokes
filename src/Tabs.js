@@ -132,7 +132,7 @@ class TabsComponent extends React.Component {
                     Lets Go!
                   </button>
                   <a href="/yourjokes/terms-and-conditions" target="_blank">
-                    Terms and Conditions
+                    Official Rules
                   </a>
                 </div>
               </Tab>

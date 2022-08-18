@@ -15,6 +15,7 @@ class UserInfo extends React.Component {
       zip: '',
       verified: false,
       error: '',
+      ofAge: false,
     };
 
     this.handleChangeAddress = this.handleChangeAddress.bind(this);
@@ -27,6 +28,7 @@ class UserInfo extends React.Component {
     this.handleChangeTermsEmail = this.handleChangeTermsEmail.bind(this);
     this.handleChangeZip = this.handleChangeZip.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleChangeOfAge = this.handleChangeOfAge.bind(this);
     this.submitUserInfo = this.submitUserInfo.bind(this);
   }
 
@@ -63,6 +65,17 @@ class UserInfo extends React.Component {
   }
 
   handleChangeTermsEmail(event) {
+    const target = event.target;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
+    const name = target.name;
+
+    this.setState({
+      [name]: value,
+    });
+  }
+
+  
+  handleChangeOfAge(event) {
     const target = event.target;
     const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
@@ -220,13 +233,27 @@ class UserInfo extends React.Component {
           </div>
           <div className="col-12">
             <label>
-            By clicking submit, you agree to receive marketing and promotional emails from Ferrara Candy Company
+              By clicking submit, you agree to receive marketing and promotional
+              emails from Ferrara Candy Company
               <input
                 name="termsEmail"
                 type="checkbox"
                 defaultValue={false}
                 checked={this.state.termsEmail}
                 onChange={this.handleChangeTermsEmail}
+                required
+              />
+            </label>
+          </div>
+          <div className="col-12">
+            <label>
+            I am 18 years of age or older and have read and agree to the Official Rules
+              <input
+                name="ofAge"
+                type="checkbox"
+                defaultValue={false}
+                checked={this.state.ofAge}
+                onChange={this.handleChangeOfAge}
                 required
               />
             </label>
